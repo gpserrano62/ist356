@@ -20,4 +20,4 @@ elif incr_clicked:
     st.session_state.count = st.session_state.count + 1
     
 # display session state, after interations
-st.write(f'Button clicked {st.session_state.count} times')
+st.title(f'Button clicked {st.session_state.count} times')
