@@ -4,7 +4,7 @@ import streamlit as st
 
 # initialize
 if 'count' not in st.session_state:
-    st.session_state.count = 0
+    st.session_state.count = 0 # property
 
 # widget setup
 st.title('Counter Example: Session State')
