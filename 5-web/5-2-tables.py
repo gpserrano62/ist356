@@ -3,10 +3,11 @@ import pandas as pd
 from io import StringIO
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=True)
+    browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://mafudge.github.io/scraping-examples/ist256/fall2023/")
+    #page.goto("https://www.espn.com/nfl/standings")
 
     # Let's scrape the page!
     # use pandas read_html to parse the HTML
@@ -16,7 +17,7 @@ def run(playwright: Playwright) -> None:
     dfs = pd.read_html(content)
 
     # print the first table
-    print(dfs[0])
+    print(dfs[1])
     # ---------------------
     context.close()
     browser.close()
